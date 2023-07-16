@@ -7,7 +7,7 @@ on:
 jobs:
   build-crx:
     name: Build CRX file
-    uses: cardinalby/webext-buildtools-pack-extension-dir-action@v1
+    uses: cardinalby/.github/workflows/webext-buildtools-pack-extension-dir-action@v1
     with:
       extensionDir: 'chrome-extension'
       zipFilePath: 'chrome-extension/zip/let-me-multitask-bro.zip'
