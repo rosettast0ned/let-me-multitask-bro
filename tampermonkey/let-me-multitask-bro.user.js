@@ -15,6 +15,9 @@
 // @icon64       https://raw.githubusercontent.com/rosettast0ned/let-me-multitask-bro/main/tampermonkey/let_me_multitask_bro64.png
 // @run-at       document-idle
 // ==/UserScript==
+//
+// Picture in picture icon by Ria Fitriana from https://thenounproject.com/browse/icons/term/picture-in-picture/ Noun Project (CC BY 3.0)
+//
 
 (function () {
     console.log('LMMB: Let Me Multitask, Bro extension triggered.')
