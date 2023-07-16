@@ -17,13 +17,13 @@ jobs:
       uses: cardinalby/webext-buildtools-chrome-crx-action@2.0.3
       with:
         # Path to WebExtension directory
-        zipFilePath: 'tree/main/chrome-extension/zip/let-me-multitask-bro.zip'
+        zipFilePath: './chrome-extension/zip/let-me-multitask-bro.zip'
         # Path to save result crx file
-        crxFilePath: 'tree/main/chrome-extension/crx/let-me-multitask-bro.crx'
+        crxFilePath: './chrome-extension/crx/let-me-multitask-bro.crx'
         # Contents of private key used to sign crx file
         privateKey: ${{ secrets.CHROME_CRX_PRIVATE_KEY }}
         # Path to save update.xml file for extensions hosted not on Chrome Web Store. This xml is used as response at url, specified in manifest's `update_url` key file
-        updateXmlPath: 'tree/main/chrome-extension/crx/update.xml' # optional
+        updateXmlPath: './chrome-extension/crx/update.xml' # optional
         # Required, if you specified updateXmlPath. URL to the .crx file
         updateXmlCodebaseUrl: 'https://raw.githubusercontent.com/rosettast0ned/let-me-multitask-bro/main/chrome-extension/crx/let-me-multitask-bro.crx' # optional
         # App Id to use in update.xml file. Generated from private key by default
