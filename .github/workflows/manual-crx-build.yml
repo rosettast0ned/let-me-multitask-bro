@@ -15,7 +15,7 @@ jobs:
       - name: Check out repository code
         uses: actions/checkout@v3
       - name: Create key for Chrome
-        run: echo ${{ secrets.CHROME_CRX_PRIVATE_KEY }} >${{ runner.temp }}/signing-key.pem
+        run: echo "${{ secrets.CHROME_CRX_PRIVATE_KEY }}" >${{ runner.temp }}/signing-key.pem
       - name: Install Chrome, pack and sign extension
         #id: chrome_stuff
         uses: browser-actions/setup-chrome@v1
