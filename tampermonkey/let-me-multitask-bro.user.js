@@ -2,7 +2,7 @@
 // @name         Let Me Multitask, Bro
 // @author       Christopher Conley
 // @copyright    Copyright (C) 2023 Christopher Conley
-// @license      GPLv2
+// @license      GPL-2.0-only
 // @version      0.0.1
 // @description  A Tampermonkey script that allows picture-in-picture mode to be used for videos, even if the website has disabled it.
 // @namespace    https://github.com/rosettast0ned/let-me-multitask-bro
