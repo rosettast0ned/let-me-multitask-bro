@@ -5,7 +5,7 @@ on:
   push:
     tags:
       - "v*"
-      - "stable"
+      - "*-stable"
 jobs:
   build-crx-file:
     runs-on: ubuntu-latest
@@ -34,6 +34,7 @@ jobs:
       - uses: "marvinpinto/action-automatic-releases@latest"
         with:
           repo_token: "${{ secrets.RELEASES_OAUTH_TOKEN }}"
+          automatic_release_tag: "stable"
           prerelease: false
           title: "Release ${{ env.LMMB_VERSION }}"
           files: |
