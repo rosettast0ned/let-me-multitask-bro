@@ -1,10 +1,10 @@
 name: Manual CRX build
 #run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
-run-name: Building CRX
+run-name: Building CRX Latest
 on:
   push:
     branches:
-      - actions-test
+      - main
 jobs:
   build-crx-file:
     runs-on: ubuntu-latest
@@ -14,6 +14,8 @@ jobs:
       #- run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
       - name: Check out repository code
         uses: actions/checkout@v3
+      - name: Set version ENV variable
+        run: echo "LMMB_VERSION=$(cat ${{ github.workspace }}/VERSION)" >> $GITHUB_ENV
       - name: Create key for Chrome
         run: echo "${{ secrets.CHROME_CRX_PRIVATE_KEY }}" >${{ runner.temp }}/signing-key.pem
       - name: Install Chrome, pack and sign extension
@@ -33,6 +35,6 @@ jobs:
           repo_token: "${{ secrets.RELEASES_OAUTH_TOKEN }}"
           automatic_release_tag: "latest"
           prerelease: true
-          title: "Testing Build"
+          title: "Devel ${{ env.LMMB_VERSION }}"
           files: |
             ${{ github.workspace }}/chrome-extension/let-me-multitask-bro.crx
