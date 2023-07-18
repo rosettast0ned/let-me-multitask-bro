@@ -24,7 +24,7 @@ jobs:
         uses: browser-actions/setup-chrome@v1
       - run: chrome --pack-extension=${{ github.workspace }}/chrome-extension/src --pack-extension-key=${{ runner.temp }}/signing-key.pem
       - run: rm -f ${{ runner.temp }}/signing-key.pem
-      - run: mv ${{ github.workspace }}/chrome-extension/src.crx ${{ github.workspace }}/chrome-extension/let-me-multitask-bro.crx
+      - run: mv ${{ github.workspace }}/chrome-extension/src.crx ${{ github.workspace }}/chrome-extension/let-me-multitask-bro-${{ env.LMMB_VERSION }}.crx
       #- run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
       #- run: echo "🖥️ The workflow is now ready to test your code on the runner."
       #- name: List files in the repository
@@ -38,4 +38,4 @@ jobs:
           prerelease: false
           title: "Release ${{ env.LMMB_VERSION }}"
           files: |
-            ${{ github.workspace }}/chrome-extension/let-me-multitask-bro.crx
+            ${{ github.workspace }}/chrome-extension/let-me-multitask-bro-${{ env.LMMB_VERSION }}.crx
