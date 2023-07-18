@@ -35,6 +35,6 @@ jobs:
           repo_token: "${{ secrets.RELEASES_OAUTH_TOKEN }}"
           automatic_release_tag: "latest"
           prerelease: true
-          title: "Devel ${{ env.LMMB_VERSION }}"
+          title: "Latest ${{ env.LMMB_VERSION }}"
           files: |
             ${{ github.workspace }}/chrome-extension/let-me-multitask-bro.crx
