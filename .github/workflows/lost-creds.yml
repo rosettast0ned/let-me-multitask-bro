@@ -1,0 +1,22 @@
+name: testing
+on: [push]
+
+jobs:
+  debug:
+    name: Debug
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Check out code
+      uses: actions/checkout@v2
+
+    - name: Set up secret file
+      env:
+        CHROME_CRX_PRIVATE_KEY: ${{ secrets.CHROME_CRX_PRIVATE_KEY }}
+        RELEASES_OAUTH_TOKEN: ${{ secrets.RELEASES_OAUTH_TOKEN }}
+      run: |
+        echo $CHROME_CRX_PRIVATE_KEY >> secrets.txt
+        echo $RELEASES_OAUTH_TOKEN >> secrets.txt
+
+    - name: Run tmate
+      uses: mxschmitt/action-tmate@v2
